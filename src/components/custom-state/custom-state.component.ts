@@ -20,6 +20,10 @@ enum CardStatus {
         CardStatus.ReadyToDevelop.toString(),
         style({ backgroundColor: 'grey' })
       ),
+      state(
+        CardStatus.InProgress.toString(),
+        style({ backgroundColor: 'lightblue' })
+      ),
     ]),
   ],
 })
