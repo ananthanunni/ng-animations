@@ -1,0 +1,18 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  padding: 6px;
+  background: #aaa;
+  margin-right: 1px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.active {
+  background: none;
+  color: #aaa;
+  cursor: default;
+}
