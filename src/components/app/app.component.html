@@ -1,0 +1,18 @@
+<h1>Angular Animations</h1>
+
+<ul [ngSwitch]="activeExample">
+  <li
+    *ngFor="let option of options"
+    [ngClass]="{ active: option.example === activeExample }"
+    (click)="activeExample = option.example"
+  >
+    {{ option.title }}
+  </li>
+</ul>
+
+<ng-container [ngSwitch]="activeExample">
+  <app-simple-enter-leave
+    *ngSwitchCase="Example.SimpleEnterLeave"
+  ></app-simple-enter-leave>
+  <app-stagger-list *ngSwitchCase="Example.StaggerList"></app-stagger-list>
+</ng-container>
