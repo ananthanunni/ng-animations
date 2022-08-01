@@ -21,8 +21,8 @@ import { Component, OnInit } from '@angular/core';
           [
             stagger(150, [
               animate(
-                '300ms',
-                style({ opacity: 0, transform: 'translateY(30px)' })
+                '300ms ease-out',
+                style({ opacity: 0, transform: 'translateY(-30px)' })
               ),
             ]),
           ],
@@ -32,9 +32,9 @@ import { Component, OnInit } from '@angular/core';
           ':enter',
           [
             style({ opacity: 0, transform: 'translateX(30px)' }),
-            stagger(300, [
+            stagger(150, [
               animate(
-                '450ms',
+                '450ms ease-in-out',
                 style({ opacity: 1, transform: 'translateX(0)' })
               ),
             ]),
@@ -67,6 +67,10 @@ export class StaggeredListComponent {
   onDeleteClicked(item: ListItem): void {
     const index = this.list.findIndex((r) => r.id === item.id);
     this.list.splice(index, 1);
+  }
+
+  onClearClicked(): void {
+    this.list = [];
   }
 
   private addItem(value: string): void {
