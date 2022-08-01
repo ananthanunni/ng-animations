@@ -1,13 +1,19 @@
-import { animate, state, style, trigger } from '@angular/animations';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 enum CardStatus {
-  ReadyToDevelop,
-  InProgress,
-  CodeReview,
-  PushedBack,
-  Testing,
-  Approval,
+  ReadyToDevelop = 'ReadyToDevelop',
+  InProgress = 'InProgress',
+  CodeReview = 'CodeReview',
+  PushedBack = 'PushedBack',
+  Testing = 'Testing',
+  Approval = 'Approval',
 }
 
 @Component({
@@ -18,29 +24,56 @@ enum CardStatus {
     trigger('jiraCard', [
       state(
         CardStatus.ReadyToDevelop.toString(),
-        style({ backgroundColor: 'grey', marginLeft: 0 })
+        style({ backgroundColor: 'lightgrey', color: 'grey', marginLeft: 0 })
       ),
       state(
         CardStatus.InProgress.toString(),
-        style({ backgroundColor: 'lightblue', marginLeft: '10%' })
+        style({
+          backgroundColor: 'lightblue',
+          color: 'midnightblue',
+          marginLeft: '10%',
+        })
       ),
       state(
         CardStatus.CodeReview.toString(),
-        style({ backgroundColor: 'purple', marginLeft: '30%' })
+        style({
+          backgroundColor: 'mediumpurple',
+          color: 'purple',
+          marginLeft: '30%',
+          borderRadius: 15,
+        })
       ),
       state(
         CardStatus.PushedBack.toString(),
-        style({ backgroundColor: 'red', marginLeft: '20%' })
+        style({
+          backgroundColor: 'indianred',
+          color: 'darkred',
+          marginLeft: '20%',
+        })
       ),
       state(
         CardStatus.Testing.toString(),
-        style({ backgroundColor: 'lightgreen', marginLeft: '50%' })
+        style({
+          backgroundColor: 'lightgreen',
+          color: 'green',
+          marginLeft: '50%',
+          borderRadius: 60,
+        })
       ),
       state(
         CardStatus.Approval.toString(),
-        style({ backgroundColor: 'green', marginLeft: '70%' })
+        style({
+          backgroundColor: 'green',
+          color: 'white',
+          marginLeft: '70%',
+          borderRadius: 150,
+        })
       ),
-      animate('300ms ease-in-out'),
+      // Define transitions
+      transition(`${CardStatus.ReadyToDevelop} => ${CardStatus.Approval}`, [
+        animate('4500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)'),
+      ]),
+      transition('* => *', [animate('1200ms ease-in-out')]),
     ]),
   ],
 })

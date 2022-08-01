@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './components/app/app.component';
 import { CustomStateComponent } from './components/custom-state/custom-state.component';
 import { SimpleEnterLeaveComponent } from './components/simple-enter-leave/simple-enter-leave.component';
-import { StaggerListComponent } from './components/stagger-list/stagger-list.component';
+import { StaggeredListComponent } from './components/staggered-list/staggered-list.component';
 
 @NgModule({
   imports: [BrowserModule, BrowserAnimationsModule],
@@ -12,7 +12,7 @@ import { StaggerListComponent } from './components/stagger-list/stagger-list.com
     AppComponent,
     SimpleEnterLeaveComponent,
     CustomStateComponent,
-    StaggerListComponent,
+    StaggeredListComponent,
   ],
   bootstrap: [AppComponent],
 })
