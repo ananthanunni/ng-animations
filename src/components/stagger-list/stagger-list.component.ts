@@ -5,11 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './stagger-list.component.html',
   styleUrls: ['./stagger-list.component.css']
 })
-export class StaggerListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class StaggerListComponent{
 }
