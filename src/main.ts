@@ -41,76 +41,60 @@ const routes = [
     RouterModule,
   ],
   template: `
-    <mat-toolbar class="toolbar">
-      <button mat-icon-button aria-label="Toggle menu" (click)="toggleMatSidenav()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>Angular v14 Playground</span>
-    </mat-toolbar>
-    <mat-sidenav-container class="container">
-      <mat-sidenav [(opened)]="matSidenavOpened" fixedTopGap="64" fixedInViewport>
-        <mat-nav-list>
-          <a mat-list-item routerLink="/">Home</a>
-          <a mat-list-item routerLink="/about">About</a>
-          <a mat-list-item href="https://liveloveapp.com" target="_blank">Learn More about LiveLoveApp</a>
-        </mat-nav-list>
-      </mat-sidenav>
-      <mat-sidenav-content class="content">
-        <main>
-          <router-outlet></router-outlet>
-        </main>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
+  <h1>Angular Animations</h1>
+
+  <ul [ngSwitch]="activeExample">
+    <li
+      *ngFor="let option of options"
+      [ngClass]="{ active: option.example === activeExample }"
+      (click)="activeExample = option.example"
+    >
+      {{ option.title }}
+    </li>
+  </ul>
   `,
   styles: [
     `
-      :host {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+    ul {
+      list-style-type: none;
+    
+      li {
+        display: inline;
+        padding: 6px;
+        background: #aaa;
+        margin-right: 1px;
+        transition-duration: 0.3s;
+        cursor: pointer;
+    
+        &.active {
+          background: none;
+          color: #aaa;
+          cursor: default;
+        }
       }
-
-      .toolbar {
-        position: fixed;
-        z-index: 2;
-        display: flex;
-      }
-
-      .toolbar > button {
-        color: #fff;
-      }
-
-      .toolbar > span {
-        margin-left: 16px;
-      }
-
-      .container {
-        flex: 1 auto;
-      }
-
-      .content {
-        flex: 1 auto;
-        display: flex;
-        flex-direction: column;
-        color: #000;
-        background: #fff;
-      }
-
-      main {
-        margin-top: 64px;
-        flex: 1 auto;
-      }
+    }    
     `,
   ],
 })
 export class AppComponent {
-  matSidenavOpened = false;
-  name = 'Brian Love';
+  options = [
+    new ExampleItemOption(Example.SimpleEnterLeave, 'Simple Enter Leave'),
+    new ExampleItemOption(Example.StaggerList, 'Stagger List'),
+  ];
+  Example = Example;
 
-  toggleMatSidenav(): void {
-    this.matSidenavOpened = !this.matSidenavOpened;
-  }
+  activeExample = Example.SimpleEnterLeave;
 }
+
+enum Example {
+  SimpleEnterLeave,
+  StaggerList,
+}
+
+class ExampleItemOption {
+  constructor(public example: Example, public title: string) {}
+}
+
 
 bootstrapApplication(AppComponent, {
   providers: [
