@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent {
   options = [
     new ExampleItemOption(Example.SimpleEnterLeave, 'Simple Enter Leave'),
+    new ExampleItemOption(Example.CustomState, 'Custom State Change'),
     new ExampleItemOption(Example.StaggerList, 'Stagger List'),
   ];
   Example = Example;
@@ -17,6 +18,7 @@ export class AppComponent {
 
 enum Example {
   SimpleEnterLeave,
+  CustomState,
   StaggerList,
 }
 
