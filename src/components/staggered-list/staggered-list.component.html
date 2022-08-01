@@ -1,0 +1,12 @@
+<h3>Staggered List</h3>
+<div class="toolbar">
+  <input type="button" value="Add 6 Items" (click)="addItems(6)" />
+</div>
+<input type="text" (keydown.enter)="onSubmit($event)" />
+<div [@listAnimation]="list.length">
+  <div *ngFor="let item of list">
+    <button (click)="onDeleteClicked(item)">X</button>
+    <span>({{ item.id }})</span>
+    <span>{{ item.label }}</span>
+  </div>
+</div>
