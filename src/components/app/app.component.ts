@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent {
   options = [
     new ExampleItemOption(Example.SimpleEnterLeave, 'Simple Enter Leave'),
-    new ExampleItemOption(Example.CustomState, 'Custom State Change'),
+    new ExampleItemOption(Example.CustomState, 'Custom State'),
     new ExampleItemOption(Example.StaggerList, 'Stagger List'),
   ];
   Example = Example;
 
-  activeExample = Example.SimpleEnterLeave;
+  activeExample = Example.CustomState;
 }
 
 enum Example {

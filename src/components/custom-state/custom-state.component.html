@@ -1,0 +1,34 @@
+<div class="toolbar">
+  <a
+    (click)="status = CardStatus.ReadyToDevelop"
+    [ngClass]="{ active: status === CardStatus.ReadyToDevelop }"
+    >ReadyToDevelop</a
+  >
+  <a
+    (click)="status = CardStatus.InProgress"
+    [ngClass]="{ active: status === CardStatus.InProgress }"
+    >InProgress</a
+  >
+  <a
+    (click)="status = CardStatus.CodeReview"
+    [ngClass]="{ active: status === CardStatus.CodeReview }"
+    >CodeReview</a
+  >
+  <a
+    (click)="status = CardStatus.PushedBack"
+    [ngClass]="{ active: status === CardStatus.PushedBack }"
+    >PushedBack</a
+  >
+  <a
+    (click)="status = CardStatus.Testing"
+    [ngClass]="{ active: status === CardStatus.Testing }"
+    >Testing</a
+  >
+  <a
+    (click)="status = CardStatus.Approval"
+    [ngClass]="{ active: status === CardStatus.Approval }"
+    >Approval</a
+  >
+</div>
+
+<div class="target" [@jiraCard]="status"></div>
