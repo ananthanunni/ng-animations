@@ -19,7 +19,7 @@ import { Component, OnInit } from '@angular/core';
         query(
           ':leave',
           [
-            stagger(100, [
+            stagger(150, [
               animate(
                 '300ms',
                 style({ opacity: 0, transform: 'translateY(30px)' })
@@ -32,9 +32,9 @@ import { Component, OnInit } from '@angular/core';
           ':enter',
           [
             style({ opacity: 0, transform: 'translateX(30px)' }),
-            stagger(100, [
+            stagger(300, [
               animate(
-                '150ms',
+                '450ms',
                 style({ opacity: 1, transform: 'translateX(0)' })
               ),
             ]),
