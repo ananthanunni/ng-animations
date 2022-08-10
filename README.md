@@ -1,3 +1,3 @@
-# angular-v14-playground-94jap8
+Angular Animation Brownbag
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-v14-playground-94jap8)
+- AUR/MedStudy
