@@ -4,4 +4,16 @@
   value="Toggle Target Visibility"
   (click)="targetVisible = !targetVisible"
 />
-<div class="target" *ngIf="targetVisible" @targetRectangle></div>
+<div
+  class="target"
+  *ngIf="targetVisible"
+  @targetRectangle
+  (@targetRectangle.start)="onAnimationStarted()"
+  (@targetRectangle.done)="onAnimationDone()"
+></div>
+
+<pre>
+  <ng-container  *ngFor="let log of logs; let i = index">
+  Log {{ i }} : {{ log | json }}
+  </ng-container>
+</pre>
