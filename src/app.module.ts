@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './components/app/app.component';
-import { CustomStateComponent } from './components/custom-state/custom-state.component';
+import { CardTransitionsComponent } from './components/custom-state-container/card-transitions/card-transitions.component';
+import { CustomStateContainerComponent } from './components/custom-state-container/custom-state-container.component';
 import { SimpleEnterLeaveComponent } from './components/simple-enter-leave/simple-enter-leave.component';
 import { StaggeredListComponent } from './components/staggered-list/staggered-list.component';
 
@@ -11,7 +12,8 @@ import { StaggeredListComponent } from './components/staggered-list/staggered-li
   declarations: [
     AppComponent,
     SimpleEnterLeaveComponent,
-    CustomStateComponent,
+    CustomStateContainerComponent,
+    CardTransitionsComponent,
     StaggeredListComponent,
   ],
   bootstrap: [AppComponent],

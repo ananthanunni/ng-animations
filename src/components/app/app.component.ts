@@ -13,7 +13,7 @@ export class AppComponent {
   ];
   Example = Example;
 
-  activeExample = Example.StaggeredList;
+  activeExample = Example.SimpleEnterLeave;
 }
 
 enum Example {
