@@ -1,0 +1,32 @@
+<h3>Traffic Light</h3>
+
+<ul>
+  <li
+    [ngClass]="{ active: signalState === SignalState.Red }"
+    (click)="signalState = SignalState.Red"
+  >
+    {{ SignalState.Red }}
+  </li>
+  <li
+    [ngClass]="{ active: signalState === SignalState.Amber }"
+    (click)="signalState = SignalState.Amber"
+  >
+    {{ SignalState.Amber }}
+  </li>
+  <li
+    [ngClass]="{ active: signalState === SignalState.Green }"
+    (click)="signalState = SignalState.Green"
+  >
+    {{ SignalState.Green }}
+  </li>
+  <li
+    [ngClass]="{ active: signalState === SignalState.Off }"
+    (click)="signalState = SignalState.Off"
+  >
+    {{ SignalState.Off }}
+  </li>
+</ul>
+
+<div class="light">
+  <div class="overlay"></div>
+</div>

@@ -1,5 +1,4 @@
 <h1>Angular Animations</h1>
-
 <ul [ngSwitch]="activeExample">
   <li
     *ngFor="let option of options"
@@ -9,6 +8,7 @@
     {{ option.title }}
   </li>
 </ul>
+<hr />
 
 <ng-container [ngSwitch]="activeExample">
   <app-simple-enter-leave

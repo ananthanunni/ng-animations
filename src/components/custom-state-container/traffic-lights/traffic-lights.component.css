@@ -1,0 +1,37 @@
+.light {
+  border-radius: 150px;
+  border: 12px solid grey;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  background: #333;
+}
+
+.overlay {
+  background: linear-gradient(333deg, #ffffff4f, transparent);
+  width: 78%;
+  height: 48%;
+  margin: auto;
+  border-radius: 120px 120px 30px 30px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  padding: 6px;
+  background: #034692;
+  margin-right: 6px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #ccc;
+}
+
+.active {
+  background: rgb(146, 154, 155);
+  color: #333333;
+  cursor: default;
+}
