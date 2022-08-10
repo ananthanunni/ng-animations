@@ -23,11 +23,11 @@ enum CardStatus {
   animations: [
     trigger('jiraCard', [
       state(
-        CardStatus.ReadyToDevelop.toString(),
+        CardStatus.ReadyToDevelop,
         style({ backgroundColor: 'lightgrey', color: 'grey', marginLeft: 0 })
       ),
       state(
-        CardStatus.InProgress.toString(),
+        CardStatus.InProgress,
         style({
           backgroundColor: 'lightblue',
           color: 'midnightblue',
@@ -35,7 +35,7 @@ enum CardStatus {
         })
       ),
       state(
-        CardStatus.CodeReview.toString(),
+        CardStatus.CodeReview,
         style({
           backgroundColor: 'mediumpurple',
           color: 'purple',
@@ -44,7 +44,7 @@ enum CardStatus {
         })
       ),
       state(
-        CardStatus.PushedBack.toString(),
+        CardStatus.PushedBack,
         style({
           backgroundColor: 'indianred',
           color: 'darkred',
@@ -52,7 +52,7 @@ enum CardStatus {
         })
       ),
       state(
-        CardStatus.Testing.toString(),
+        CardStatus.Testing,
         style({
           backgroundColor: 'lightgreen',
           color: 'green',
@@ -61,7 +61,7 @@ enum CardStatus {
         })
       ),
       state(
-        CardStatus.Approval.toString(),
+        CardStatus.Approval,
         style({
           backgroundColor: 'green',
           color: 'white',
