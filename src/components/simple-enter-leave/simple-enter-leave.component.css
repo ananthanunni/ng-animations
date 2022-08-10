@@ -4,3 +4,8 @@
   background: turquoise;
   margin: auto;
 }
+
+.log {
+  font-family: monospace;
+  font-size: 12px;
+}

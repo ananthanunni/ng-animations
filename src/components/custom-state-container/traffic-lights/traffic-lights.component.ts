@@ -24,7 +24,7 @@ enum SignalState {
       state(SignalState.Red, style({ backgroundColor: '#e90505' })),
       state(SignalState.Amber, style({ backgroundColor: '#fd9c15' })),
       state(SignalState.Green, style({ backgroundColor: '#04b304' })),
-      transition('* => *', [animate('600ms')]),
+      transition('* => *', [animate('360ms')]),
     ]),
   ],
 })

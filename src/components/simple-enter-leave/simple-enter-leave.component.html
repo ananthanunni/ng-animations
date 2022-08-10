@@ -12,8 +12,8 @@
   (@targetRectangle.done)="onAnimationDone()"
 ></div>
 
-<pre>
-  <ng-container  *ngFor="let log of logs; let i = index">
-  Log {{ i }} : {{ log | json }}
-  </ng-container>
-</pre>
+<div class="log">
+  <div *ngFor="let log of logs; let i = index">
+    Log {{ i }} : {{ log | json }}
+  </div>
+</div>
