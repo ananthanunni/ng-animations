@@ -9,11 +9,14 @@ import { Component } from '@angular/core';
     trigger('targetRectangle', [
       transition(':enter', [
         style({ opacity: 0, transform: 'scale(0.6)' }),
-        animate('300ms ease-out', style({ opacity: 1, transform: 'scale(1)' })),
+        animate(
+          '1200ms ease-out',
+          style({ opacity: 1, transform: 'scale(1)' })
+        ),
       ]),
       transition(':leave', [
         animate(
-          '300ms ease-out',
+          '1200ms ease-out',
           style({ opacity: 0, transform: 'scale(0.6)' })
         ),
       ]),
@@ -26,10 +29,17 @@ export class SimpleEnterLeaveComponent {
   targetVisible = false;
 
   onAnimationStarted(): void {
-    this.logs.push(`Animation .start callback.`);
+    this.appendLog(`Animation .start callback.`);
   }
 
   onAnimationDone(): void {
-    this.logs.push(`Animation .done callback.`);
+    this.appendLog(`Animation .done callback.`);
+  }
+
+  private appendLog(message: String): void {
+    const now = new Date();
+    this.logs.push(
+      `(@${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}.${now.getMilliseconds()}) :: ${message}`
+    );
   }
 }
