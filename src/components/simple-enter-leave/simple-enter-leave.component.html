@@ -10,7 +10,9 @@
   @targetRectangle
   (@targetRectangle.start)="onAnimationStarted()"
   (@targetRectangle.done)="onAnimationDone()"
-></div>
+>
+  <span>Label</span>
+</div>
 
 <div class="log">
   <div *ngFor="let log of logs; let i = index">Log {{ i }} : {{ log }}</div>

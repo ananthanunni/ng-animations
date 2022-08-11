@@ -1,4 +1,10 @@
-import { animate, style, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  query,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { Component } from '@angular/core';
 
 @Component({
@@ -13,6 +19,7 @@ import { Component } from '@angular/core';
           '1200ms ease-out',
           style({ opacity: 1, transform: 'scale(1)' })
         ),
+        query('span', animate('3000ms', style({ color: 'red' }))),
       ]),
       transition(':leave', [
         animate(
