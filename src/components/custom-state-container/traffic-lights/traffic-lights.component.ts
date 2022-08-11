@@ -24,8 +24,10 @@ enum SignalState {
       state(SignalState.Red, style({ backgroundColor: '#e90505' })),
       state(SignalState.Amber, style({ backgroundColor: '#fd9c15' })),
       state(SignalState.Green, style({ backgroundColor: '#04b304' })),
-      transition(`${SignalState.Off} => *`, [animate('60ms')]),
-      transition(`* => ${SignalState.Off}`, [animate('1200ms')]),
+      transition(`${SignalState.Off} => *`, [
+        animate('300ms cubic-bezier(0,2,.96,-1.61)'),
+      ]),
+      transition(`* => ${SignalState.Off}`, [animate('2400ms')]),
       transition('* => *', [animate('600ms')]),
     ]),
   ],
