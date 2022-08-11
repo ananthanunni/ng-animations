@@ -1,7 +1,6 @@
-<h3>Staggered List</h3>
 <div class="toolbar">
   <input type="button" value="Add 6 Items" (click)="addItems(6)" />
-  <input type="button" value="Clear" (click)="onClearClicked()"/>
+  <input type="button" value="Clear" (click)="onClearClicked()" />
 </div>
 <input type="text" (keydown.enter)="onSubmit($event)" />
 <div [@listAnimation]="list.length">

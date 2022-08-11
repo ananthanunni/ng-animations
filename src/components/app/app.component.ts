@@ -9,7 +9,7 @@ export class AppComponent {
   options = [
     new ExampleItemOption(Example.SimpleEnterLeave, 'Simple Enter Leave'),
     new ExampleItemOption(Example.CustomState, 'Custom State'),
-    new ExampleItemOption(Example.StaggeredList, 'Stagger List'),
+    new ExampleItemOption(Example.Complex, 'Complex'),
   ];
   Example = Example;
 
@@ -19,7 +19,7 @@ export class AppComponent {
 enum Example {
   SimpleEnterLeave,
   CustomState,
-  StaggeredList,
+  Complex,
 }
 
 class ExampleItemOption {
