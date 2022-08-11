@@ -2,6 +2,7 @@ import {
   animate,
   group,
   query,
+  stagger,
   state,
   style,
   transition,
@@ -16,13 +17,13 @@ import { Component, OnInit } from '@angular/core';
   animations: [
     trigger('animatedContainer', [
       state('false', style({ opacity: 0 })),
+      state('true', style({ transform: 'scale(1.8)' })),
       transition('* => true', [
+        query('h1', style({ color: 'red' })),
+        query('h2', style({ color: 'green' })),
         group([
-          animate('5000ms', style({ transform: 'scale(1.8)' })),
-          animate(
-            '300ms',
-            style({ opacity: 1, color: 'green', transform: 'scale(1.8)' })
-          ),
+          animate('6000ms', style({ transform: 'scale(1.8)' })),
+          animate('300ms', style({ opacity: 1 })),
         ]),
       ]),
     ]),
