@@ -16,10 +16,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./query-group-complex.component.css'],
   animations: [
     trigger('animatedContainer', [
-      state('false', style({ opacity: 0.2 })),
-      state('true', style({ transform: 'scale(1.2)' })),
+      state('false', style({ transform: 'scale(0)', opacity: 0.2 })),
+      state('true', style({ transform: 'scale(1.2)', color: 'turquoise' })),
+      transition(':enter', animate(0)),
       transition('* => true', [
-        style({ transform: 'scale(0)' }),
         query('h1', style({ color: 'red' })),
         query('h2', style({ color: 'green' })),
         group([
@@ -44,5 +44,5 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class QueryGroupComplexComponent {
-  isGood = false;
+  state = false;
 }
