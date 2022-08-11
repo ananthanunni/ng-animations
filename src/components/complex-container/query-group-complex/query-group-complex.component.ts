@@ -24,7 +24,7 @@ import { Component, OnInit } from '@angular/core';
         query('h2', style({ color: 'green' })),
         group([
           animate('1200ms', style({ transform: 'scale(1.2)' })),
-          animate('300ms', style({ opacity: 1 })),
+          animate('3000ms', style({ opacity: 1 })),
         ]),
       ]),
       transition('* => false', [
