@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
           '1200ms ease-out',
           style({ opacity: 1, transform: 'scale(1)' })
         ),
-        query('span', animate('3000ms', style({ color: 'red' }))),
+        query('span', animate('3000ms', style({ color: 'white' }))),
       ]),
       transition(':leave', [
         animate(
