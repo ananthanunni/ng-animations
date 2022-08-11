@@ -16,7 +16,7 @@ import { Component, OnInit } from '@angular/core';
     trigger('animatedContainer', [
       state('false', style({ opacity: 0 })),
       transition('* => true', [
-        query(':enter', [animate('1200ms', style({ color: 'red' }))], {
+        query(':self', [animate('1200ms', style({ color: 'red' }))], {
           optional: true,
         }),
       ]),
