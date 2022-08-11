@@ -16,15 +16,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./query-group-complex.component.css'],
   animations: [
     trigger('animatedContainer', [
-      state('false', style({ opacity: 0 })),
-      state('true', style({ transform: 'scale(1.8)' })),
+      state('false', style({ opacity: 0.2 })),
+      state('true', style({ transform: 'scale(1.2)' })),
       transition('* => true', [
+        style({ transform: 'scale(0)' }),
         query('h1', style({ color: 'red' })),
         query('h2', style({ color: 'green' })),
         group([
-          animate('6000ms', style({ transform: 'scale(1.8)' })),
+          animate('1200ms', style({ transform: 'scale(1.2)' })),
           animate('300ms', style({ opacity: 1 })),
         ]),
+      ]),
+      transition('* => false', [
+        query(
+          'h1',
+          animate('300ms', style({ marginLeft: '-100%', opacity: 0.2 }))
+        ),
+        query(
+          'h2,h3',
+          stagger(
+            '300ms',
+            animate('300ms', style({ marginRight: '-100%', opacity: 0.2 }))
+          )
+        ),
       ]),
     ]),
   ],
