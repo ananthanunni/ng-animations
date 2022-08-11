@@ -1,5 +1,6 @@
 import {
   animate,
+  group,
   query,
   state,
   style,
@@ -16,13 +17,17 @@ import { Component, OnInit } from '@angular/core';
     trigger('animatedContainer', [
       state('false', style({ opacity: 0 })),
       transition('* => true', [
-        query(':self', [animate('1200ms', style({ color: 'red' }))], {
-          optional: true,
-        }),
+        group([
+          animate('5000ms', style({ transform: 'scale(1.8)' })),
+          animate(
+            '300ms',
+            style({ opacity: 1, color: 'green', transform: 'scale(1.8)' })
+          ),
+        ]),
       ]),
     ]),
   ],
 })
 export class QueryGroupComplexComponent {
-  isVisible = false;
+  isGood = false;
 }

@@ -1,5 +1,6 @@
-<input type="button" value="Toggle View" (click)="isVisible = !isVisible" />
-<div [@animatedContainer]="isVisible">
+<input type="button" value="Toggle Good" (click)="isGood = !isGood" /> Good -
+{{ isGood }}
+<div [@animatedContainer]="isGood">
   <h1>H1 Header</h1>
   <h2>H2 Header</h2>
   <h3>H3 Header</h3>
